@@ -1,0 +1,53 @@
+---
+title: "Get Subscription Details"
+api: "GET https://api-dev.join-magic.com/api/merchants/manage_subscription/get_subscription_details/"
+description: "This endpoint Used for get Subscription Details."
+---
+
+### header
+<ParamField header="Authorization" type="string">
+  consumer user token.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+  and subscription transaction logs of the user
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api-dev.join-magic.com/api/merchants/manage_subscription/get_subscription_details/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+
+    {
+        "id": 82,
+        "transaction_uuid": "sc-f9b33966049d4618b9620546536abc06",
+        "dwolla_transaction_id": "0a9ea104-4730-ee11-8153-fa714224061e",
+        "amount": 50.0,
+        "user_id": "a4f59f40f61b4e4ba068f7a97f0b2bf8",
+        "consumer_transaction_id": "fa4eb81f-0f0d-4865-8245-871b3909582b",
+        "merchant_transaction_id": "035e7634-ef70-4545-8235-03482ae5df67",
+        "checkout_id": 29,
+        "transaction_status": "pending",
+        "transaction_date_time": "2023-08-01T08:40:11.206201Z",
+        "description": null,
+        "error": null,
+        "created_at": "2023-08-01T08:40:11.206232Z",
+        "updated_at": "2023-08-01T08:40:11.206243Z"
+    }
+
+```
+
+</ResponseExample>

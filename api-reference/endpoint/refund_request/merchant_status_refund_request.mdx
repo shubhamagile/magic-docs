@@ -1,0 +1,47 @@
+---
+title: "Merchant Status Refund Request"
+api: "POST https://api-dev.join-magic.com/api/merchants/refund_request/merchant_status_refund_request/"
+description: "This endpoint Used for approve refund request by merchant."
+---
+
+### header
+<ParamField header="Authorization" type="string">
+  consumer user token.
+</ParamField>
+
+### body
+<ParamField body="id" type="string">
+  this is refund id.
+</ParamField>
+
+<ParamField body="status" type="string">
+  merchant response on the refund request.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/merchants/refund_request/merchant_status_refund_request/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--body-data 'id:refund_record_id, status: Approved or Rejected'
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+
+"Refund request accepted by merchant"
+    
+```
+
+</ResponseExample>

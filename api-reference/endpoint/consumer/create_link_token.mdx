@@ -1,0 +1,47 @@
+---
+title: "Create Link Token"
+api: "GET https://api-dev.join-magic.com/api/consumers/checkout/{checkout_id}/create_link_token/"
+description: "This endpoint Used for create link token."
+---
+
+### header
+<ParamField path="checkout_id" type="string">
+  checkout object id.
+</ParamField>
+
+<ParamField header="Authorization" type="string">
+  consumer user token.
+</ParamField>
+
+<ParamField header="link-token" type="string">
+  merchant user token.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/consumers/checkout/{checkout_id}/create_link_token/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--header 'link-token: <link-token>'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+
+  "link_token": "link-sandbox-edb99fda-46e4-4cb5-b6e7-302b9f242252",
+  "expiration": "2023-08-21T17:10:28Z",
+  "request_id": "IqxHbaz4S6WJXvP"
+    
+```
+
+</ResponseExample>

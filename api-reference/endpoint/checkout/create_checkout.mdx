@@ -1,0 +1,43 @@
+---
+title: "Create Checkout Object"
+api: "POST https://api-dev.join-magic.com/api/merchants/checkout"
+description: "This endpoint used for create checkout object"
+---
+
+### header
+<ParamField header="api-key" type="string">
+  Merchant API key.
+</ParamField>
+
+### Body
+
+<ParamField body="data" type="string">
+  this is the body of Checkout Object
+</ParamField>
+
+
+### Response
+
+<ResponseField name="success" type="number">
+  it will return 'Transaction Successful' and status code 200.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/merchants/checkout' \
+--header 'Content-Type: application/json' \
+--header 'api-key: <api-key>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "checkout_id": <checkout_id>
+}
+```
+
+</ResponseExample>

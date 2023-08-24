@@ -1,0 +1,41 @@
+---
+title: "Verify User"
+api: "POST https://api-dev.join-magic.com/api/verify_user/verify_code"
+description: "This endpoint Used for initiate refund trnasfer."
+---
+
+
+### body
+<ParamField body="phone" type="string">
+  Phone number of consumer user.
+</ParamField>
+
+<ParamField body="verification_code" type="string">
+  OTP verification code.
+</ParamField>
+
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/verify_user/verify_code' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+
+
+  "message": "Authentication Complete",
+  "data": {
+      "auth_token": "66f70bee9b72dc83f299c2ed28c5a17099df078e"
+  }
+
+    
+```
+
+</ResponseExample>

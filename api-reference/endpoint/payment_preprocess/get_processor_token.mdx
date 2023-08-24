@@ -1,0 +1,47 @@
+---
+title: "Get Processor Token"
+api: "POST https://api-dev.join-magic.com/api/merchants/payment_preprocess/get_processor_token/"
+description: "This Api has three steps performed internally:
+        1. Get processor token from Plaid for Dwolla
+        2. Add funding source on Dwolla for Customer Bank account
+        3. Initiate A2A transfer and store Transfer information in Checkout object
+"
+---
+
+### header
+<ParamField header="api-key" type="string">
+  Merchant API key.
+</ParamField>
+
+### body
+<ParamField body="checkout_id" type="string">
+  Checkout object id.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/merchants/payment_preprocess/get_processor_token' \
+--header 'Content-Type: application/json' \
+--header 'api-key: <api-key>' \
+--data-raw '{ \
+    "checkout_id":<checkout_id> \
+}'
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+  "message": "Transaction Executed"
+```
+
+</ResponseExample>

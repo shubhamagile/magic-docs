@@ -1,0 +1,41 @@
+---
+title: "Subscription Cancel"
+api: "POST https://api-dev.join-magic.com/api/merchants/manage_subscription/subscription_cancel/"
+description: "This endpoint Used for Cancel Subscription."
+---
+
+### header
+<ParamField header="Authorization" type="string">
+  consumer user token.
+</ParamField>
+
+### body
+<ParamField body="id" type="string">
+  Checkout object id.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/merchants/manage_subscription/subscription_cancel/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: <Token>'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+
+"user +91234567890 is unsubscribed"
+    
+```
+
+</ResponseExample>

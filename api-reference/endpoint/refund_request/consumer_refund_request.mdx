@@ -1,0 +1,41 @@
+---
+title: "Consumer Refund Request"
+api: "POST https://api-dev.join-magic.com/api/merchants/refund_request/consumer_refund_request/"
+description: "This endpoint Used for create refund request."
+---
+
+### header
+<ParamField header="Authorization" type="string">
+  consumer user token.
+</ParamField>
+
+### body
+<ParamField body="transaction_uuid" type="string">
+  you will get this id from subscription transaction logs transaction_uuid id.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/merchants/refund_request/consumer_refund_request/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--body-data 'transaction_uuid:<TRANSACTION_UUID>'
+```
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+
+"Refund request send"
+    
+```
+
+</ResponseExample>

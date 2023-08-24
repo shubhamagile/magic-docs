@@ -1,11 +1,10 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Magic Pay",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/magic.svg",
+    "light": "/logo/magic.svg"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/logo/magic.svg",
   "colors": {
     "primary": "#9563FF",
     "light": "#AE87FF",
@@ -18,65 +17,55 @@
       "to": "#9563FF"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
   "tabs": [
     {
       "name": "API Reference",
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
   "navigation": [
-    {
-      "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
     {
       "group": "API Documentation",
       "pages": ["api-reference/authentication"]
     },
+
     {
-      "group": "Endpoint Examples",
+      "group": "Checkout API",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/checkout/get_checkout",
+        "api-reference/endpoint/checkout/create_checkout",
+        "api-reference/endpoint/checkout/generate_link_token"
+      ]
+    },
+    {
+      "group": "Consumer API",
+      "pages": [
+        "api-reference/endpoint/consumer/create_link_token",
+        "api-reference/endpoint/consumer/exchange_public_token"
+      ]
+    },
+    {
+      "group": "Manage Subscription API",
+      "pages": [
+        "api-reference/endpoint/manage_subscription/get_subscription_details",
+        "api-reference/endpoint/manage_subscription/subscription_cancel"
+      ]
+    },
+    {
+      "group": "Refund API",
+      "pages": [
+        "api-reference/endpoint/refund_request/consumer_refund_request",
+        "api-reference/endpoint/refund_request/consumer_refund_list",
+        "api-reference/endpoint/refund_request/merchant_status_refund_request",
+        "api-reference/endpoint/refund_request/initiate_refund_transfer"
+      ]
+    },
+    {
+      "group": "Verify User API",
+      "pages": [
+        "api-reference/endpoint/user/send_code",
+        "api-reference/endpoint/user/verify_code"
       ]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }

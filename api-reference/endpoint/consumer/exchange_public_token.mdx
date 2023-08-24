@@ -1,0 +1,58 @@
+---
+title: "Exchange Public Token"
+api: "POST https://api-dev.join-magic.com/api/consumers/checkout/{checkout_id}/exchange_public_token/"
+description: "This endpoint Used for initiate refund trnasfer."
+---
+
+### header
+<ParamField path="checkout_id" type="string">
+  checkout object id.
+</ParamField>
+
+<ParamField header="Authorization" type="string">
+  consumer user token.
+</ParamField>
+
+<ParamField header="link-token" type="string">
+  merchant link token.
+</ParamField>
+
+### body
+<ParamField body="public_token" type="string">
+  this is plaid public token.
+</ParamField>
+
+<ParamField body="plaid_account_id" type="string">
+  this is plaid plaid account id.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request POST 'https://api-dev.join-magic.com/api/consumers/checkout/{checkout_id}/exchange_public_token/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--header 'link-token: <link-token>' \
+--data-raw '{ \
+    "public_token": "plaid_public_token" \
+    "plaid_account_id":"plaid_account_id" \
+}' 
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+
+  "message": "payment method saved successfully."
+  
+```
+
+</ResponseExample>

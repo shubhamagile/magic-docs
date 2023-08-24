@@ -1,0 +1,41 @@
+---
+title: "Generate Link Token"
+api: "GET https://api-dev.join-magic.com/api/merchants/checkout/{checkout_id}/generate_link_token"
+description: "This endpoint is used for generate link token."
+---
+
+### header
+
+<ParamField path="checkout_id" type="string">
+  checkout object id .
+</ParamField>
+
+<ParamField header="api-key" type="string">
+  Merchant API key.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  This will return 200 on success.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api-dev.join-magic.com/api/merchants/checkout/{{checkout_id}}/generate_link_token' \
+--header 'Content-Type: application/json' \
+--header 'api-key: <api-key>'
+```
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "link_token": "mpch-76438abb114e80c0f52aecab51000d485f467cc5",
+    "checkout_id": "ch-49056a5e920b4389a30e941a144c68c1"
+}
+```
+
+</ResponseExample>
